@@ -1,6 +1,6 @@
 from rest_framework import generics
+from category.serializers import CategorySerializer, CategoryDetailSerializer
 from category.models import Category
-from serializers import CategorySerializer, CategoryDetailSerializer
 
 
 class CategoryListCreateView(generics.ListAPIView):
@@ -12,4 +12,11 @@ class CategoryListCreateView(generics.ListAPIView):
         return CategorySerializer
 
 
-class CategoryDetailVie(generics.RetrieveUpdateDestroyAPIView):
+class CategoryDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Category.objects.all()
+    lookup_field = 'id'
+
+    def get_serializer_class(self):
+        if self.request.method in ['POST', 'PATCH']:
+            return CategoryDetailSerializer
+        return CategoryDetailSerializer

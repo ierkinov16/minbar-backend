@@ -9,7 +9,7 @@ from clerics.serializers import ClericsListSerializer, ClericsDetailSerializer
 class ClericsListCreateView(generics.ListCreateAPIView):
     queryset = Clerics.objects.all()
 
-    def get_queryset(self):
+    def get_serializer_class(self):
         if self.request.method == 'POST':
             return ClericsListSerializer
         return ClericsListSerializer

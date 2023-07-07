@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import environ
+from django.db.backends import postgresql
 
 env = environ.Env(
     DEBUG=(bool, False)
@@ -43,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'category',
-    'clerics'
+    'clerics',
+    'posts',
 ]
 
 MIDDLEWARE = [

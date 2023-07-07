@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=255, blank=True)
+    name = models.ForeignKey('category.Category',on_delete=models.CASCADE,related_name='category')
     created_date = models.DateTimeField(auto_now_add=True)
     profile_image = models.ImageField
     image_banner = models.ImageField

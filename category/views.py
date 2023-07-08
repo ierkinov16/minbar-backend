@@ -4,7 +4,7 @@ from category.models import Category
 
 
 class CategoryListCreateView(generics.ListAPIView):
-    queryset = Category.objects.all()
+    queryset = Category.objects.order_by('-id')
 
     def get_serializer_class(self):
         if self.request.method == 'POST':
@@ -13,7 +13,7 @@ class CategoryListCreateView(generics.ListAPIView):
 
 
 class CategoryDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Category.objects.all()
+    queryset = Category.objects.order_by('-id')
     lookup_field = 'id'
 
     def get_serializer_class(self):

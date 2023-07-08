@@ -4,7 +4,7 @@ from posts.serializers import PostsDetailSerializer, PostsListCreateSerializer
 
 
 class PostsListCreateView(generics.ListCreateAPIView):
-    queryset = Posts.objects.all()
+    queryset = Posts.objects.order_by('-id')
 
     def get_serializer_class(self):
         if self.request.method == 'POST':
@@ -13,7 +13,7 @@ class PostsListCreateView(generics.ListCreateAPIView):
 
 
 class PostsDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Posts.objects.all()
+    queryset = Posts.objects.order_by('-id')
 
     def get_serializer_class(self):
         if self.request.method == ['POST', 'PATCH']:

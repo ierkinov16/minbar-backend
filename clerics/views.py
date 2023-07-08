@@ -7,7 +7,7 @@ from clerics.serializers import ClericsListSerializer, ClericsDetailSerializer
 
 
 class ClericsListCreateView(generics.ListCreateAPIView):
-    queryset = Clerics.objects.all()
+    queryset = Clerics.objects.order_by('-id')
 
     def get_serializer_class(self):
         if self.request.method == 'POST':
@@ -16,7 +16,7 @@ class ClericsListCreateView(generics.ListCreateAPIView):
 
 
 class ClericsDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Clerics.objects.all()
+    queryset = Clerics.objects.order_by('-id')
     lookup_field = 'id'
 
     def get_serializer_class(self):

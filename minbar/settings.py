@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'category',
     'clerics',
     'posts',
+    'report'
 ]
 
 MIDDLEWARE = [

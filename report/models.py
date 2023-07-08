@@ -10,7 +10,6 @@ class Report(models.Model):
         REPORT4 = 'CONTENT FEEDBACK REPORT'
 
     reporter_author = models.CharField(max_length=100, blank=True)
-    report_date = models.DateTimeField(auto_now_add=True)
     report_time = models.DateTimeField(auto_now_add=True)
     report_to = models.ForeignKey('clerics.Clerics', on_delete=models.CASCADE, related_name='report_to')
     report_type = models.CharField(max_length=255, choices=ReportTypes.choices)

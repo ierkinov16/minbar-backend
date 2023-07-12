@@ -9,9 +9,9 @@ class Posts(models.Model):
 
     title = models.CharField(max_length=100, blank=True)
     owner = models.ForeignKey('clerics.Clerics', on_delete=models.CASCADE, related_name='posts')
-    image = models.ImageField
-    description = models.TextField
-    posted_at = models.DateTimeField
+    image = models.ImageField()
+    description = models.TextField()
+    posted_at = models.DateTimeField()
     like_dislikes = models.CharField(max_length=10, choices=PostsLikeDislikes.choices, null=True)
 
     def __str__(self):

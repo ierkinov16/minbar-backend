@@ -15,3 +15,4 @@ class Report(models.Model):
     report_type = models.CharField(max_length=255, choices=ReportTypes.choices)
     why_report = models.TextField(max_length=255, blank=True)
 
+

@@ -17,7 +17,6 @@ class ClericsListCreateView(generics.ListCreateAPIView):
 
 class ClericsDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Clerics.objects.order_by('-id')
-    lookup_field = 'id'
 
     def get_serializer_class(self):
         if self.request.method in ['POST', 'PATCH']:

@@ -14,7 +14,6 @@ class ReportListCreateView(generics.ListCreateAPIView):
 
 class ReportDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Report.objects.order_by('-id')
-    lookup_field = 'id'
 
     def get_serializer_class(self):
         if self.request.method in ['POST', 'PATCH']:

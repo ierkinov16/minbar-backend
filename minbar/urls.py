@@ -32,12 +32,12 @@ urlpatterns = [
 ]
 schema_view = get_schema_view(
     openapi.Info(
-        title=" News Vlog Website",
-        default_version='v1',
-        description="News Vlog",
+        title="Minbar Backend",
+        default_version='powered by ERKINOV',
+        description="git hub @ierkinov16",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="contact@p10.com"),
-        license=openapi.License(name="BSD License"),
+        license=openapi.License(name="licensed by saidahror"),
     ),
     public=True,
     permission_classes=[permissions.AllowAny],

@@ -9,6 +9,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class CategoryDetailSerializer(serializers.ModelSerializer):
-    model = Category
-    fields = ('name', 'created_date', 'description', 'profile_image', 'image_banner')
-    read_only_fields = ('id',)
+    class Meta:
+        model = Category
+        fields = ('name', 'created_date', 'description', 'profile_image', 'image_banner')
+        read_only_fields = ('id',)
